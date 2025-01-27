@@ -71,7 +71,9 @@ public class PersonaMatriz implements personasDAO{
         for(i=0;i<numPersonas &&
                 !dni.equalsIgnoreCase(dni);i++);
         //es igual al if del metodo buscarPosicionPersona
-        return (1 < numPersonas)?null:persona[i];
+        return (1 == numPersonas)?null:persona[i];
+        
+        
         
     }
     private int buscarPosicionPersona(int id){
@@ -84,5 +86,10 @@ public class PersonaMatriz implements personasDAO{
             return -1;
         }
     } 
+    
+    public void limpiarDatos(){
+        persona = new Personas[100];
+        numPersonas = 0;
+    }
     
 }
